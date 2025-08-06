@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.himedia.board.dao.IBoardDao">
+    <select id="getAllCount" resultType="_int">
+        select count(*)from board;
+    </select>
+
+    <select id="selectBoard" parameterType="com.himedia.board.dto.Paging" resultType="com.himedia.board.dto.BoardDto">
+        select*from board order by num desc limit #{displayRow} offset #{startNum}
+    </select>
+
+    <select id="getBoard" resultType="com.himedia.board.dto.BoardDto">
+        select*from board where num=#{num}
+    </select>
+
+    <update id="addReadCount">
+        update board set readcount = readcount + 1 where num =#{num}
+    </update>
+
+    <insert id="insert" parameterType="com.himedia.board.dto.BoardDto">
+        insert into board(userid, pass,email, title, content, image,savefilename) values (#{userid},#{pass},#{email},#{title},#{content},#{image},#{savefilename})
+    </insert>
+
+    <update id="update" parameterType="com.himedia.board.dto.BoardDto">
+        update board set userid=#{userid}, email=#{email}, title=#{title}, content=#{content}, image=#{image}, savefilename=#{savefilename}
+        where num=#{num}
+    </update>
+
+    <delete id="delete">
+        delete from board where num=#{num}
+    </delete>
+
+    <update id="updatePass">
+        update board set pass=#{newPass} where num=#{num}
+    </update>
+</mapper>

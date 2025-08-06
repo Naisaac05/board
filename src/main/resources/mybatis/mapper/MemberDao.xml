@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.himedia.board.dao.IMemberDao">
+    <select id="getMember" resultType="com.himedia.board.dto.MemberDto">
+        select*from member where userid=#{userid}
+    </select>
+
+    <insert id="insert" parameterType="com.himedia.board.dto.MemberDto">
+        insert into member(userid, pwd, name, email, phone, provider) values(#{userid}, #{pwd}, #{name}, #{email}, #{phone}, #{provider})
+    </insert>
+
+    <update id="update" parameterType="com.himedia.board.dto.MemberDto">
+        update member set name=#{name},pwd=#{pwd},email=#{email},phone=#{phone}, provider=#{provider} where userid=#{userid}
+    </update>
+
+    <delete id="deleteMember">
+        delete from member where userid=#{userid}
+    </delete>
+</mapper>
