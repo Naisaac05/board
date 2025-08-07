@@ -48,7 +48,7 @@
                             <img src="${pageContext.request.contextPath}/images/noname.jpg" width="100" alt="기본 이미지" />
                         </c:when>
                         <c:otherwise>
-                            <img src="${pageContext.request.contextPath}/images/${oldfilename}" width="100" alt="기존 업로드 이미지" />
+                            <img src="${oldfilename}" width="100" alt="기존 업로드 이미지" />
                         </c:otherwise>
                     </c:choose>
                     <input type="hidden" name="oldfilename" value="${oldfilename}" />
@@ -72,7 +72,7 @@
                     </c:when>
                     <c:otherwise>
                         <div style="flex:4">
-                            <img src="${pageContext.request.contextPath}/images/${dto.savefilename}" id="previewimg" width="150" alt="업로드 이미지 미리보기" />
+                            <img src="${dto.savefilename}" id="previewimg" width="150" alt="업로드 이미지 미리보기" />
                         </div>
                         <input type="hidden" name="image" value="${dto.image}" />
                         <input type="hidden" name="savefilename" value="${dto.savefilename}" />
