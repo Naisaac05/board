@@ -111,7 +111,7 @@ public class MemberController {
         String exeCode="<script type='text/javascript'>" +
                 "location.href='https://kauth.kakao.com/oauth/authorize?"
                 +"client_id=4b7960a694fa914e70f2d6883478757d&"
-                +"redirect_uri=http://localhost:8070/kakaoLogin"
+                +"redirect_uri=http://13.125.199.21:8070/kakaoLogin"
                 +"&response_type=code'"
                 +"</script>";
 
@@ -129,7 +129,7 @@ public class MemberController {
 
         String bodyData = "grant_type=authorization_code";
         bodyData += "&client_id=4b7960a694fa914e70f2d6883478757d";
-        bodyData += "&redirect_uri=http://localhost:8070/kakaoLogin";
+        bodyData += "&redirect_uri=http://13.125.199.21:8070/kakaoLogin";
         bodyData += "&code="+code;
         //url 객체에 bodyData를 더해서 요청합니다
 
