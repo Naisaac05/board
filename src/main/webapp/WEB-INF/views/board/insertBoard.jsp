@@ -51,7 +51,7 @@
                     </c:when>
                     <c:otherwise>
                         <div style="flex:4">
-                            <img src="/images/${dto.savefilename}" id="previewimg" width="150" />
+                            <img src="${dto.savefilename}" id="previewimg" width="150" />
                         </div>
                         <input type="hidden" name="image" value="${dto.image}"/>
                         <input type="hidden" name="savefilename" value="${dto.savefilename}"/>

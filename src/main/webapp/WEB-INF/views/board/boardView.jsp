@@ -49,7 +49,7 @@
             이미지가 없습니다
           </c:when>
           <c:otherwise>
-            <img src="/images/${board.savefilename}" width="350"/><br />
+            <img src="${board.savefilename}" width="350"/><br />
             ${board.image}
           </c:otherwise>
         </c:choose>
